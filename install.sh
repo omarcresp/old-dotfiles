@@ -81,9 +81,10 @@ else
     echo "tmux is not installed"
     echo "installing tmux"
     sudo apt-get install tmux
+    mkdir -p ~/.tmux/plugins
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     cp ~/.config/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-    cp ~/.config/dotfiles/tmux/tmux.sh ~/.local/bin/tmux.sh
+    cp ~/.config/dotfiles/tmux/tmux.sh ~/.local/bin/tm
 
     echo """javasript
 go
