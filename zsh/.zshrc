@@ -53,9 +53,6 @@ bindkey "^j" down-line-or-history
 bindkey "^k" up-line-or-history
 bindkey "^l" forward-word
 
-# bindkey "^J" history-beginning-search-forward
-# bindkey "^K" history-beginning-search-backward
-
 # Add go to path
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 # Add zoxide to ath

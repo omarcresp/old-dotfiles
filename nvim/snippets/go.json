@@ -1,0 +1,107 @@
+{
+	"wc": {
+		"prefix": "wc",
+		"body": [
+			"package controllers",
+			"",
+			"import (",
+			"\t\"net/http\"",
+			"",
+			"\t\"github.com/gin-gonic/gin\"",
+			"\t\"wermote.com/api-services/api/models\"",
+			"\t\"wermote.com/api-services/api/services\"",
+			")",
+			"",
+			"type $1Controller struct {",
+			"\t$1Service services.$1Service",
+			"}",
+			"",
+			"func New$1Controller($1Service services.$1Service) $1Controller {",
+			"\treturn $1Controller{$1Service: $1Service}",
+			"}",
+			"",
+			"$0",
+			"",
+			"func (c *$1Controller) RegisterRoutes(router *gin.RouterGroup) {",
+			"\t$2Routes := router.Group(\"/$2\")",
+			"}"
+		]
+	},
+	"wm": {
+		"prefix": "wm",
+		"body": [
+			"package models",
+			"",
+			"import (",
+			"\t\"go.mongodb.org/mongo-driver/bson/primitive\"",
+			")",
+			"",
+			"type $1 struct {",
+			"\tID primitive.ObjectID `json:\"id\" bson:\"_id\"`",
+			"\t$0",
+			"}"
+		]
+	},
+	"ws": {
+		"prefix": "ws",
+		"body": [
+			"package services",
+			"",
+			"import \"wermote.com/api-services/api/models\"",
+			"",
+			"type $1Service struct {",
+			"\t$0",
+			"}"
+		]
+	},
+	"wsi": {
+		"prefix": "wsi",
+		"body": [
+			"package services",
+			"",
+			"import (",
+			"\t\"wermote.com/api-services/api/models\"",
+			"\t\"wermote.com/api-services/api/repositories\"",
+			")",
+			"",
+			"type $1ServiceImpl struct {",
+			"\trepository repositories.$1Repository",
+			"}",
+			"",
+			"func New$1Service(repository repositories.$1Repository) $1Service {",
+			"\treturn $1&ServiceImpl{repository: repository}",
+			"}",
+			"",
+			"$0"
+		]
+	},
+	"wr": {
+		"prefix": "wr",
+		"body": [
+			"package repositories",
+			"",
+			"import (",
+			"\t\"context\"",
+			"",
+			"\t\"go.mongodb.org/mongo-driver/bson\"",
+			"\t\"go.mongodb.org/mongo-driver/bson/primitive\"",
+			"\t\"go.mongodb.org/mongo-driver/mongo\"",
+			"",
+			"\t\"wermote.com/api-services/api/models\"",
+			")",
+			"",
+			"type $1Repository struct {",
+			"\tcollection *mongo.Collection",
+			"\tctx		  context.Context",
+			"}",
+			"",
+			"func New$1Repository(db *mongo.Database, ctx context.Context) $1Repository {",
+			"\tcollection := db.Collection(\"$2\")",
+			"",
+			"\treturn $1Repository{collection: collection, ctx: ctx}",
+			"}",
+			"",
+			"$0"
+		]
+	}
+}
