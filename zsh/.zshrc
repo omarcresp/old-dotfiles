@@ -59,7 +59,7 @@ bindkey "^l" forward-word
 # Add go to path
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 # Add zoxide to ath
-export PATH="$PATH:/home/jackcres/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # zoxide
 eval "$(zoxide init zsh --cmd cd)"
