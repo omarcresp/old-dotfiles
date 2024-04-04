@@ -1,3 +1,7 @@
+# Ensure install dev tools
+sudo apt-get update
+sudo apt-get install cmake unzip curl build-essential ninja-build
+
 # Check if zsh is installed, if not, install it
 if [ -x "$(command -v zsh)" ]; then
     echo "zsh is already installed"
