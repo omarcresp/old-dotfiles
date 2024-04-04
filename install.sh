@@ -79,8 +79,8 @@ else
     echo "installing tmux"
     sudo apt-get install tmux
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    ln ~/.config/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-    ln ~/.config/dotfiles/tmux.sh ~/.local/bin/tmux.sh
+    cp ~/.config/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+    cp ~/.config/dotfiles/tmux/tmux.sh ~/.local/bin/tmux.sh
 fi
 
 # Check if lazygit is installed, if not, install it
