@@ -141,6 +141,11 @@ else
     sudo apt-get install tmux
 
     echo "=== JACKCRES dotfiles: tmux installed"
+fi
+
+sleep 1
+
+if [ ! -d "~/.tmux/plugins/tpm" ]; then
     echo "=== JACKCRES dotfiles: installing tpm"
     sleep 1
 
@@ -148,21 +153,33 @@ else
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
     echo "=== JACKCRES dotfiles: tpm installed"
-    echo "=== JACKCRES dotfiles: configuring tmux"
-    sleep 1
+fi
 
-    cp ~/.config/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-    cp ~/.config/dotfiles/tmux/tmux.sh ~/.local/bin/tm
+sleep 1
 
+echo "=== JACKCRES dotfiles: configuring tmux"
+
+if [ -f ~/.tmux.conf ]; then
+    mv ~/.tmux.conf ~/.tmux.conf.old
+fi
+
+if [ ! -f ~/.languages ]; then
     echo """javasript
 go
 bash""" > ~/.languages
+fi
+
+if [ ! -f ~/.commands ]; then
     echo """grep
 tar
 ln""" > ~/.commands
-
-    echo "=== JACKCRES dotfiles: tmux configured"
 fi
+
+cp ~/.config/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+cp ~/.config/dotfiles/tmux/tmux.sh ~/.local/bin/tm
+
+echo "=== JACKCRES dotfiles: tmux configured"
+sleep 1
 
 # Check if lazygit is installed, if not, install it
 if [ -x "$(command -v lazygit)" ]; then
