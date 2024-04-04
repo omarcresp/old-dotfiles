@@ -554,7 +554,7 @@ require('lazy').setup({
 
       harpoon:setup()
 
-      vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = '[A]dd current file to Harpoon' })
+      vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = '[A]dd current file to Harpoon' })
       vim.keymap.set("n", '<C-e>', telescope.extensions.harpoon.marks)
 
       vim.keymap.set("n", "<C-f>", function() harpoon:list():select(1) end)
