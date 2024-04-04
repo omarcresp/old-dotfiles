@@ -7,10 +7,10 @@ else
     sudo apt-get install zsh
 fi
 
-ZOXIDE_PATH=~/.local/bin
+LOCAL_PATH=~/.local/bin
 
 # Check if zoxide is installed, if not, install it
-if [ -x "$(command -v $ZOXIDE_PATH/zoxide)" ]; then
+if [ -x "$(command -v $LOCAL_PATH/zoxide)" ]; then
     echo "zoxide is already installed"
 else
     echo "zoxide is not installed"
@@ -31,7 +31,9 @@ if [ -x "$(command -v nvim)" ]; then
 else
     echo "neovim is not installed"
     echo "installing neovim"
-    sudo apt-get install neovim
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    chmod u+x nvim.appimage
+    mv nvim.appimage $LOCAL_PATH/nvim
 fi
 
 mv ~/.config/nvim ~/.config/nvim-old
