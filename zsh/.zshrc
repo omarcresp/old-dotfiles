@@ -7,7 +7,7 @@ fi
 
 DOTFILES=$HOME/.config/dotfiles
 
-source $DOTFILE/zsh/antigen.zsh
+source $DOTFILES/zsh/antigen.zsh
 
 # Load the oh-my-zsh's plugins.
 antigen bundle git

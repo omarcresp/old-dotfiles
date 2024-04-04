@@ -6,7 +6,9 @@ else
     sudo apt-get install zsh
 fi
 
-if [ -x "$(command -v zoxide)" ]; then
+ZOXIDE_PATH=~/.local/bin
+
+if [ -x "$(command -v $ZOXIDE_PATH/zoxide)" ]; then
     echo "zoxide is already installed"
 else
     echo "zoxide is not installed"
@@ -18,6 +20,7 @@ echo "Configuring zsh"
 rm ~/.zshrc
 cp ~/.config/dotfiles/zsh/.zshrc ~/.zshrc
 
-source ~/.zshrc
 touch ~/.folders
+
+echo "Remember to restart your terminal to apply changes (source ~/.zshrc couldn't work, pls restart terminal)"
 
