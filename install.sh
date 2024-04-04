@@ -71,6 +71,9 @@ else
     sudo apt-get install ripgrep
 fi
 
+touch ~/.languages
+touch ~/.commands
+
 # Check if tmux is installed, if not, install it
 if [ -x "$(command -v tmux)" ]; then
     echo "tmux is already installed"
@@ -81,6 +84,13 @@ else
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     cp ~/.config/dotfiles/tmux/.tmux.conf ~/.tmux.conf
     cp ~/.config/dotfiles/tmux/tmux.sh ~/.local/bin/tmux.sh
+
+    echo """javasript
+go
+bash""" > ~/.languages
+    echo """grep
+tar
+ln""" > ~/.commands
 fi
 
 # Check if lazygit is installed, if not, install it
