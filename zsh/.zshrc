@@ -5,7 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ./antigen.zsh
+DOTFILES=$HOME/.config/dotfiles
+
+source $DOTFILE/zsh/antigen.zsh
 
 # Load the oh-my-zsh's plugins.
 antigen bundle git
@@ -19,7 +21,7 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # Load Powerlevel10k theme configuration.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $DOTFILES/zsh/.p10k.zsh ]] || source $DOTFILES/zsh/.p10k.zsh
 
 # enable autocomplete
 autoload -Uz compinit
@@ -27,7 +29,7 @@ compinit -i
 
 # history setup
 setopt SHARE_HISTORY
-HISTFILE=$HOME/.zhistory
+# HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
 HISTSIZE=999
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -61,7 +63,7 @@ export PATH="$PATH:/home/jackcres/.local/bin"
 
 # zoxide
 eval "$(zoxide init zsh --cmd cd)"
-"$HOME/z_registry.sh"
+source $DOTFILES/zsh/z_registry.sh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -74,11 +76,11 @@ alias s-home="rm -rf ~/.ssh && ln -s ~/.ssh-omar ~/.ssh"
 
 # nvim alias
 alias vim=nvim
-alias vi=nvim
+# alias vi=nvim
 alias vi-dot="nvim ~/.zshrc"
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 # Load tmux autocompletion for tm script (TODO: check why is not working)
-compdef _tmux tm
+# compdef _tmux tm
