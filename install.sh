@@ -25,15 +25,14 @@ touch ~/.folders
 
 echo "Configuring NeoVim"
 
-# Check if neovim is installed, if not, install it
+# Check if neovim is installed, if not, throw an error
 if [ -x "$(command -v nvim)" ]; then
     echo "neovim is already installed"
 else
     echo "neovim is not installed"
-    echo "installing neovim"
-    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-    chmod u+x nvim.appimage
-    mv nvim.appimage $LOCAL_PATH/nvim
+    echo "pls installing neovim"
+
+    exit 1
 fi
 
 mv ~/.config/nvim ~/.config/nvim-old
