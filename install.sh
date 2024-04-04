@@ -70,8 +70,8 @@ mv ~/.config/nvim ~/.config/nvim-old
 cp -r ~/.config/dotfiles/nvim ~/.config/nvim
 
 # Check if nvm is installed, if not, install it
-NVM_DIR="$HOME/.nvm/nvm.sh"
-if [ -f "$NVM_DIR" ]; then
+NVM_DIR="$HOME/.nvm"
+if [ -f "$NVM_DIR/nvm.sh" ]; then
     echo "=== JACKCRES dotfiles: nvm is already installed"
 else
     echo "=== JACKCRES dotfiles: nvm is not installed"
@@ -84,7 +84,7 @@ else
     echo "=== JACKCRES dotfiles: installing node lts"
     sleep 1
 
-    source $NVM_DIR
+    source $NVM_DIR/nvm.sh
 
     nvm install --lts
 
