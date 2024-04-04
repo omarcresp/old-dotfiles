@@ -80,4 +80,4 @@ alias vi-dot="nvim ~/.zshrc"
 # source <(ng completion script)
 
 # Load tmux autocompletion for tm script (TODO: check why is not working)
-# compdef _tmux tm
+compdef _tmux tm

@@ -10,5 +10,18 @@
 - Install [NeoVim](https://neovim.io/)
   - Ubuntu: [instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#appimage-universal-linux-package)
   - MacOS: `brew install neovim`
+- Copy `nvim` directory to your `$HOME/.config` directory
 - Install [NVM](https://github.com/nvm-sh/nvm)
   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
+- Install [FZF](https://github.com/junegunn/fzf)
+  - Ubuntu: `sudo apt install fzf`
+  - MacOS: `brew install fzf`
+- Install [ripgrep](https://github.com/BurntSushi/ripgrep)
+  - Ubuntu: `sudo apt install ripgrep`
+  - MacOS: `brew install ripgrep`
+- Install [tmux](https://github.com/tmux/tmux)
+  - Ubuntu: `sudo apt install tmux`
+  - MacOS: `brew install tmux`
+- Install [lazygit](https://github.com/jesseduffield/lazygit)
+  - Ubuntu: [instructions](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#ubuntu)
+  - MacOS: `brew install lazygit`
