@@ -10,3 +10,5 @@
 - Install [NeoVim](https://neovim.io/)
   - Ubuntu: [instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#appimage-universal-linux-package)
   - MacOS: `brew install neovim`
+- Install [NVM](https://github.com/nvm-sh/nvm)
+  - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`

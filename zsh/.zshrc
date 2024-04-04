@@ -29,7 +29,7 @@ compinit -i
 
 # history setup
 setopt SHARE_HISTORY
-# HISTFILE=$HOME/.zhistory
+HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
 HISTSIZE=999
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -73,7 +73,7 @@ alias s-home="rm -rf ~/.ssh && ln -s ~/.ssh-omar ~/.ssh"
 
 # nvim alias
 alias vim=nvim
-# alias vi=nvim
+alias vi=nvim
 alias vi-dot="nvim ~/.zshrc"
 
 # Load Angular CLI autocompletion.

@@ -38,5 +38,16 @@ fi
 mv ~/.config/nvim ~/.config/nvim-old
 cp -r ~/.config/dotfiles/nvim ~/.config/nvim
 
+# Check if nvm is installed, if not, install it
+NVM_DIR="$HOME/.nvm/nvm.sh"
+if [ -f "$NVM_DIR" ]; then
+    echo "nvm is already installed"
+else
+    echo "nvm is not installed"
+    echo "installing nvm"
+
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+fi
+
 echo "Remember to restart your terminal to apply changes (source ~/.zshrc couldn't work, pls restart terminal)"
 
