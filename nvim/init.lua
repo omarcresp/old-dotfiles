@@ -312,13 +312,13 @@ require('lazy').setup({
         eslint = {},
 
         emmet_language_server = {
-          filetypes = { 'html', 'templ' },
+          filetypes = { 'html', 'templ', 'typescriptreact', 'javascriptreact' },
         },
 
         angularls = {},
 
         tailwindcss = {
-          filetypes = { 'scss', 'html' },
+          filetypes = { 'scss', 'html', 'tsx', 'typescriptreact' },
         },
 
         templ = {},
@@ -549,13 +549,11 @@ require('lazy').setup({
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     config = function()
       local harpoon = require("harpoon")
-      pcall(require('telescope').load_extension, 'harpoon')
-      local telescope = require("telescope");
 
       harpoon:setup()
 
-      vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = '[A]dd current file to Harpoon' })
-      vim.keymap.set("n", '<C-e>', telescope.extensions.harpoon.marks)
+      vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = '[A]dd current file to Harpoon' })
+      vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
       vim.keymap.set("n", "<C-f>", function() harpoon:list():select(1) end)
       vim.keymap.set("n", "<C-n>", function() harpoon:list():select(2) end)
